@@ -1,16 +1,20 @@
-import { useState, useRef, useEffect, use, act } from "react"
-import { messages as mockMessages } from "../services/mockApi.js";
+import { useContext ,useState, useRef, useEffect, use, act } from "react"
+// import { messages as mockMessages } from "../services/mockApi.js";
+import { ChatContext } from "../context/Chatcontext.jsx";
 
-const Chat = ({activeUser}) => {
+const Chat = () => {
 
-  const [messages, setMessages] = useState(mockMessages)
+  // const [messages, setMessages] = useState(mockMessages)
   const [text, setText] = useState("")
  
 
   const chatContainerRef = useRef(null)
 
+
+const {selectedUser} = useContext(ChatContext)
+
+
   const hadleChange = (event) => {
-    console.log(event.target.value)
     setText(event.target.value)
   }
 
@@ -35,8 +39,6 @@ const downkey = (event) => {
       time: `${hour}:${minutes}`
 
     }
-    console.log(newchat)
-    setMessages ( [...messages , newchat] )
     setText("")
  
  
@@ -45,10 +47,10 @@ const downkey = (event) => {
   useEffect(()=>{
     if(chatContainerRef.current){
       chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight
-  }},[messages])
+  }},[])
 
 
-  if (!activeUser) {
+if (!selectedUser) {
     return ( <section className="chat-cont-empty">
       <p className="chat-empty">Selecciona un usuario para comenzar</p>
       </section>
@@ -58,15 +60,15 @@ const downkey = (event) => {
   return (
     <section className="chat">
       <header>
-        <h2> {activeUser.firstName} {activeUser.lastName}</h2>
-        <h2>{activeUser.address.city}</h2>
+        <h2> {selectedUser.firstName} {selectedUser.lastName}</h2>
+        <h2>{selectedUser.address.city}</h2>
         <p>Ultima conexión hace 1 minuto</p>
       </header>
       <div className="chat-container" ref={chatContainerRef}>
         {
-          messages.map((message) =>
-            <div className={`message ${message.author === "Robin" ? "me" : "received"}`}>
-              <p> <b>{message.author}: </b>
+          selectedUser.messages.map((message) =>
+            <div className={`message ${message.author === "me" ? "me" : "received"}`}>
+             <p> <b>{message.author === "me" ? "Tú" : message.author}: </b>
                 {message.text}
               </p>
               <p className="timeStamp">{message.time}</p>
