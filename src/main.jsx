@@ -1,14 +1,12 @@
 import { StrictMode, useState } from 'react'
 import { createRoot } from 'react-dom/client'
 
-import{App} from './components/App.jsx'
-
 
 // Agregado de estilos css
 import "./styles/main.css"
 import { ChatProvider } from './context/Chatcontext.jsx'
 
-
+import {RouterApp} from './router/RouterApp.jsx'
 
 
 
@@ -16,7 +14,7 @@ import { ChatProvider } from './context/Chatcontext.jsx'
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <ChatProvider>
-      <App/>
+      <RouterApp/>
     </ChatProvider>
   </StrictMode>,
 )

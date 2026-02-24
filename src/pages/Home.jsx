@@ -1,8 +1,8 @@
-import { Aside } from "./Aside"
-import { Chat } from "./Chat"
+import { Aside } from "../components/Aside"
+import { Chat } from "../components/Chat"
 
 
-const App =() => {
+const Home =() => {
 // Agregando funcion en el main para renderizar los componentes Aside y Chat dentro de un main con clase app, y envolviendo todo en StrictMode para evitar errores en el futuro.
 
 
@@ -13,4 +13,4 @@ const App =() => {
     </main>)
 }
 
-export {App}
+export {Home}

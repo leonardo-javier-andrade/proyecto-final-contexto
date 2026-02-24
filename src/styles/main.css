@@ -62,17 +62,19 @@ li span {
 }
 
 /* ----------------------SECCION DEL CHAT------------------------------------- */
-section{
-    flex:1;
-display: flex;
-flex-direction: column;
+section.chat{
+    
+    display: flex;
+    flex-direction: column;
     background-image: url('../assets/messages_light_colour_background.jpg');
-    background-size: cover;}
+    background-size: cover;
+    flex:1;}
 
 .chat-cont-empty{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex: 1;
 }
 
 .chat-empty{
@@ -161,6 +163,94 @@ section header {
 .chat-input button:hover{
     background-color: rgb(47, 58, 88);
     cursor: pointer;
+}
+
+
+.cont-not-found{
+    background-color: rgb(175, 166, 221);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.cont-not-found a{
+    display: block;
+    background-color: rgb(18, 5, 54);
+    padding: 8px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: antiquewhite;
+    margin-top: 10px;
+    transition: 0.9s;
+}
+.cont-not-found a:hover{
+    cursor: pointer;
+    background-color: beige;
+    color:rgb(18, 5, 54);
+}
+
+/* ---------------------- LOGIN ---------------------- */
+
+section.login {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../assets/messages_light_colour_background.jpg');
+    background-size: cover;
+    height: 100vh;
+    flex-direction: column;
+
+}
+
+.login h1 {
+    margin-bottom: 20px;
+    color: rgb(27, 110, 110);
+    backdrop-filter: blur(12px);
+        background-color: rgba(250, 235, 215, 0.452);
+     padding: 10px;
+     border-radius: 10px;
+}
+
+.login form {
+    backdrop-filter: blur(18px);
+    background-color: rgba(250, 235, 215, 0.452);
+    padding: 40px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 350px;
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.login input {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid rgb(15, 41, 4);
+    font-size: 14px;
+}
+
+.login input:focus {
+    outline: 2px solid rgb(27, 110, 110);
+}
+
+.login button {
+    background-color: rgb(20, 46, 63);
+    color: white;
+    padding: 10px;
+    border-radius: 8px 8px 8px 0px;
+    border: 1px solid rgb(83, 97, 136);
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+.login button:hover {
+    background-color: rgb(47, 58, 88);
+    cursor: pointer;
+    transform: translateY(-2px);
 }
 
 /* --------------------------------Responsive------------------------ */
