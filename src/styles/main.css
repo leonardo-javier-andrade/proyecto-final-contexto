@@ -253,6 +253,117 @@ section.login {
     transform: translateY(-2px);
 }
 
+.Error-login {
+    color: rgb(216, 22, 22);
+    font-size: 18px;
+    text-align: center;
+}
+
+/* ---------------------- REGISTER ---------------------- */
+
+/* Reutilizamos la base del login para el contenedor de registro */
+section.register {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../assets/messages_light_colour_background.jpg');
+    background-size: cover;
+    min-height: 100vh; /* Cambiado a min-height por si el form es largo */
+    flex-direction: column;
+    padding: 20px;
+}
+
+.register h1 {
+    margin-bottom: 20px;
+    color: rgb(27, 110, 110);
+    backdrop-filter: blur(12px);
+    background-color: rgba(250, 235, 215, 0.452);
+    padding: 10px 20px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.form-register {
+    backdrop-filter: blur(18px);
+    background-color: rgba(250, 235, 215, 0.452);
+    padding: 30px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    max-width: 450px; /* Un poco más ancho que el login por los campos */
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo para los contenedores de cada input */
+.form-register div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.form-register p {
+    color: rgb(27, 110, 110);
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.form-register input {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid rgb(15, 41, 4);
+    font-size: 14px;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.form-register input:focus {
+    outline: 2px solid rgb(27, 110, 110);
+    background-color: white;
+}
+
+.form-register button {
+    background-color: rgb(20, 46, 63);
+    color: white;
+    padding: 12px;
+    border-radius: 8px 8px 8px 0px;
+    border: 1px solid rgb(83, 97, 136);
+    transition: all 0.3s ease;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.form-register button:hover {
+    background-color: rgb(47, 58, 88);
+    cursor: pointer;
+    transform: translateY(-2px);
+}
+
+.error-password {
+    color: rgb(216, 22, 22) !important; /* Forzamos el color de error */
+    font-size: 12px !important;
+    margin-top: 2px;
+}
+
+
+.volverlogin {
+    background-color: rgb(20, 46, 63);
+    color: white;
+    padding: 12px;
+    border-radius: 8px 8px 8px 0px;
+    border: 1px solid rgb(83, 97, 136);
+    transition: all 0.3s ease;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.volverlogin:hover {
+    background-color: rgb(47, 58, 88);
+    cursor: pointer;
+    transform: translateY(-2px);
+}
 /* --------------------------------Responsive------------------------ */
 
 
