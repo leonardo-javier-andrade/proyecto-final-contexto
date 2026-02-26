@@ -4,7 +4,7 @@ import { createRoot } from 'react-dom/client'
 
 // Agregado de estilos css
 import "./styles/main.css"
-import { ChatProvider } from './context/Chatcontext.jsx'
+import { ChatProvider } from './context/ChatContext.jsx'
 
 import {RouterApp} from './router/RouterApp.jsx'
 

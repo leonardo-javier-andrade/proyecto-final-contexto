@@ -13,8 +13,96 @@
 
 }
 
+    .header-aside{
+        display: flex;
+        flex-direction: column;
+            align-items: center;
+        padding: 4px;
+        margin-top: auto;
+    }
+    .header-aside h1{
+        color: rgb(27, 110, 110);
+        backdrop-filter: blur(12px);
+            background-color: rgba(250, 235, 215, 0.452);
+        padding: 10px;
+        border-radius: 10px;
+        flex: 1;}
+
+/* ----------------------------------------ANIMACION DE TEMBLOR H1 ASIDE------------------- */
+
+@keyframes shake-subtle {
+    0% { transform: translate(0); }
+    20% { transform: translate(-1.5px, 1px); }
+    40% { transform: translate(-1.5px, -1px); }
+    60% { transform: translate(1.5px, 1px); }
+    80% { transform: translate(1.5px, -1px); }
+    100% { transform: translate(0); }
+}
+
+/* 2. Lo aplicamos al h1 cuando el mouse está encima */
+.header-aside h1:hover {
+    animation: shake-subtle 0.3s linear;
+    /* Opcional: un leve cambio de color para enfatizar el efecto */
+    color: rgb(35, 140, 140); 
+    cursor: default;
+}
+
+    
+/* --------------------------Efectos antiguuo del BOTN CERRAR SESION    ------------------------------ */
+    /* .header-aside button{
+        background-color: rgb(20, 46, 63);
+        color: white;
+        padding: 4px 4px;
+        border-radius: 6px 6px 6px 0px;
+        border: 1px solid  rgb(83, 97, 136);
+        transition: all 0.3s ease;
+        font-size: 12px;
+        align-self:flex-end;
+        margin-right: 8px;
+    }
+.header-aside button:hover{
+    background-color: rgb(47, 58, 88);
+    cursor: pointer;
+} */
+
+
+/* ------------------------------EFECTOS NUEVOS DEL BOTON POR CHAT---------------------------------------------------- */
+
+.header-aside button.btn-logout {
+    display: flex;
+    align-items: center;
+    gap: 0px; /* Sin espacio al principio */
+    width: 35px; /* Ancho suficiente para el icono */
+    height: 35px;
+    padding: 8px;
+    overflow: hidden; /* ESENCIAL: oculta lo que sobresale */
+    white-space: nowrap; /* Evita que el texto salte de línea */
+    transition: width 0.4s ease, gap 0.4s ease; /* Animación suave */
+    border-radius: 20px; /* Lo hace redondito */
+    align-self: flex-end;
+}
+
+/* Al pasar el mouse... */
+.header-aside button.btn-logout:hover {
+    width: 130px; /* Se expande para mostrar el texto */
+    gap: 10px;    /* Aparece el espacio entre icono y texto */
+    background-color: rgb(47, 58, 88);
+}
+
+/* Estilo del texto */
+.btn-logout .text {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.btn-logout:hover .text {
+    opacity: 1; /* El texto aparece suavemente */
+}
+
+
+
 aside{
-    background-color: rgb(152, 226, 198);
+    background-color: rgb(152, 209, 226);
     width: 250px;
     display: flex;
     flex-direction: column;
@@ -89,7 +177,7 @@ section.chat{
 }
 
 section header {
-    background-color: rgb(27, 110, 110);
+    background-color: rgb(29, 96, 134);
     border-bottom: 1px solid    rgb(29, 23, 23);
     padding: 10px;
     border-radius: 8px 8px 8px 8px;
@@ -135,8 +223,7 @@ section header {
 .chat-input{
     padding: 10px;
     display: flex;
-    background-color: rgb(27, 110, 110);
-    gap:10px;
+    background-color: rgb(29, 96, 134);    gap:10px;
     border-radius: 8px 8px 0px 0px;
 }
 

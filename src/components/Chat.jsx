@@ -1,6 +1,6 @@
-import { useContext ,useState, useRef, useEffect, use, act } from "react"
+import { useContext ,useState, useRef, useEffect } from "react"
 // import { messages as mockMessages } from "../services/mockApi.js";
-import { ChatContext } from "../context/Chatcontext.jsx";
+import { ChatContext } from "../context/ChatContext.jsx";
 
 const Chat = () => {
 
@@ -11,7 +11,7 @@ const Chat = () => {
   const chatContainerRef = useRef(null)
 
 
-const {selectedUser} = useContext(ChatContext)
+const {selectedUser, handleMessages} = useContext(ChatContext)
 
 
   const hadleChange = (event) => {
@@ -28,17 +28,18 @@ const downkey = (event) => {
     if (text.length === 0) {
       return}
       
-    console.log("Hiciste click")
+    console.log("Hiciste click") // Mensaje en la consola de hiciste click o presiionaste enter para enviar el mensaje
     const ahora = new Date()
     const hour = ahora.getHours()
     const minutes = ahora.getMinutes()
     const newchat = {
-      id: messages.length + 1,
-      author: "Robin",
+      // id: messages.length + 1,-------------ya no es necesario porque ahora el id no se asigna ahora al usuario sino que se asigna al mensaje dentro del usuario, entonces el id se asigna como la longitud de los mensajes del usuario + 1
+      author: "me", // Habria que modificar el author siendo que es uno mismo el que lo manda (seria "me" o el nombre del usuario logueado) y el otro seria el nombre del usuario seleccionado
       text: text,
       time: `${hour}:${minutes}`
 
     }
+    handleMessages(newchat)
     setText("")
  
  

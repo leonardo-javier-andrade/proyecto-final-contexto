@@ -8,11 +8,19 @@ const ChatContext = createContext()
 const ChatProvider = ({children}) => {
     
     const [users, setUsers] = useState(mockUsers)
-    const [selectedUser, setSelectedUser] = useState(null)
-    const [loggedUser, setLoggedUser] = useState(null)
+    const [selectedUserId, setSelectedUserId] = useState(null)
+    const [loggedUser, setLoggedUser] = useState(JSON.parse(localStorage.getItem("user")) || null)
+
+
+    const handleUser =(user) =>{
+        setLoggedUser(user)
+        localStorage.setItem("user",JSON.stringify(user))
+    }
+
+
     
-    const handleSelectedUser = (id) =>{
-        setSelectedUser(users.find(user=>user.id === id))
+    const handleSelectedUserId = (id) =>{
+        setSelectedUserId(id)
     }
 
     const login =(userData) =>{
@@ -28,8 +36,27 @@ const ChatProvider = ({children}) => {
 
     }
 
+    const logout =()=>{
+        localStorage.removeItem("user")
+    }
+
+    const handleMessages = (newChat) =>{
+        setUsers((prevValue)=> prevValue.map((user)=>
+            user.id=== selectedUserId ?
+        {
+            ...user,
+            messages: [...user.messages,newChat]
+        }:
+        user))
+       
+    }
+            
+
+    const selectedUser = users.find(user => user.id === selectedUserId)
+
+
     return(
-        <ChatContext.Provider value={{users, selectedUser, handleSelectedUser, login }}>
+        <ChatContext.Provider value={{users, selectedUser, handleSelectedUserId, login , handleUser, loggedUser, logout, handleMessages}}>
             {children}
         </ChatContext.Provider>
     )

@@ -1,6 +1,6 @@
 import { use, useState } from "react"
  import { useContext } from "react"
- import { ChatContext } from "../context/Chatcontext"
+    import { ChatContext } from "../context/ChatContext.jsx"
  import { useNavigate } from "react-router-dom"
 
 const Login = ()=>{
@@ -8,7 +8,7 @@ const Login = ()=>{
     const [password,setPassword] = useState("")
     const [error, setError] = useState(null)
 
-    const {login} = useContext(ChatContext)
+    const {login, handleUser} = useContext(ChatContext)
 
     const navigate = useNavigate()
 
@@ -34,6 +34,7 @@ const Login = ()=>{
         }
 
         if (response) {
+            handleUser({email, password})
             navigate("/")
         }
     }
@@ -42,7 +43,7 @@ const handleClick =() =>{
 }
     return (
             <section className="login">
-                <h1>Bienvenido, inicia seción</h1>
+                <h1>Bienvenido, inicia sesión</h1>
                 <form onSubmit={handleSubmit}>
                     <input type="email" placeholder="Ingrese su email"
                     onChange={handleChangeEmail}
