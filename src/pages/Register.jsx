@@ -1,8 +1,11 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
-
+import { useContext } from "react"
+import { ChatContext } from "../context/ChatContext.jsx"
 
 const Register = () => {
+
+    const { handleRegisterNexUser, handleUser} =useContext(ChatContext)
 
     const navigate = useNavigate()
     const handleback = () => {
@@ -53,10 +56,15 @@ const Register = () => {
             setError(true)
             return
         }
-        console.log(error, "valor del error")
+        
 
 
-        console.log({ firstName, lastName, city, email, password, password2 })
+        handleRegisterNexUser({ firstName, lastName, city, email, password, password2 })
+        handleUser({email, password})
+        navigate("/")
+
+
+        
         setFirstName("")
         setLastName("")
         setCity("")

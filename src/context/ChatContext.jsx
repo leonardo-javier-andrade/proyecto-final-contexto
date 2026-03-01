@@ -12,6 +12,8 @@ const ChatProvider = ({children}) => {
     const [loggedUser, setLoggedUser] = useState(JSON.parse(localStorage.getItem("user")) || null)
 
 
+    console.log(loggedUser, "valor del usuario logueado desde el context ---------------")
+
     const handleUser =(user) =>{
         setLoggedUser(user)
         localStorage.setItem("user",JSON.stringify(user))
@@ -54,9 +56,13 @@ const ChatProvider = ({children}) => {
 
     const selectedUser = users.find(user => user.id === selectedUserId)
 
+    const  handleRegisterNexUser = (newUser)=>{
+        console.log(newUser, "datos del nuevo usuario desde el context")
+    }
+
 
     return(
-        <ChatContext.Provider value={{users, selectedUser, handleSelectedUserId, login , handleUser, loggedUser, logout, handleMessages}}>
+        <ChatContext.Provider value={{users, selectedUser, handleRegisterNexUser, handleSelectedUserId, login , handleUser, loggedUser, logout, handleMessages}}>
             {children}
         </ChatContext.Provider>
     )
