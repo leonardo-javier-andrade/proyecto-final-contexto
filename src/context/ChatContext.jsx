@@ -7,7 +7,7 @@ const ChatContext = createContext()
 
 const ChatProvider = ({children}) => {
     
-    const [users, setUsers] = useState(mockUsers)
+    const [users, setUsers] = useState(JSON.parse(localStorage.getItem("newApi")) || mockUsers)
     const [selectedUserId, setSelectedUserId] = useState(null)
     const [loggedUser, setLoggedUser] = useState(JSON.parse(localStorage.getItem("user")) || null)
 
@@ -27,7 +27,7 @@ const ChatProvider = ({children}) => {
 
     const login =(userData) =>{
         console.log( userData, "datos del login")
-        const userfound = mockUsers.find(user=> user.email === userData.email)
+        const userfound = users.find(user=> user.email === userData.email)
 
         if (!userfound){
             return false
@@ -57,7 +57,11 @@ const ChatProvider = ({children}) => {
     const selectedUser = users.find(user => user.id === selectedUserId)
 
     const  handleRegisterNexUser = (newUser)=>{
-        console.log(newUser, "datos del nuevo usuario desde el context")
+        setUsers((prevValue) => [...prevValue, newUser])
+        console.log(newUser, "datos del nuevo usuario desde el context añadidos a la lista de usuario")
+        localStorage.setItem("newApi",JSON.stringify(users))
+
+
     }
 
 

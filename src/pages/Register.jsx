@@ -59,12 +59,12 @@ const Register = () => {
         
 
 
-        handleRegisterNexUser({ firstName, lastName, city, email, password, password2 })
+        handleRegisterNexUser({ firstName, lastName, address:{city}, email, password, password2 })
         handleUser({email, password})
         navigate("/")
 
 
-        
+
         setFirstName("")
         setLastName("")
         setCity("")

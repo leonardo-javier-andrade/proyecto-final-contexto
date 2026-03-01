@@ -4,7 +4,7 @@ import { Navigate } from "react-router-dom"
 
 
 const Routeprotected =({children})=>{
-
+    
     const {loggedUser}= useContext(ChatContext)
 
     if(!loggedUser){
