@@ -449,7 +449,7 @@ section.register {
     transform: translateY(-2px);
 }
 
-.error-password {
+.error-form {
     color: rgb(216, 22, 22) !important; /* Forzamos el color de error */
     font-size: 12px !important;
     margin-top: 2px;

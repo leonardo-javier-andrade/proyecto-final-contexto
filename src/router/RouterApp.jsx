@@ -11,7 +11,7 @@ const RouterApp =() =>{
                 <Route path="/login" element={<Login/>}/>
                 <Route path="/"  element={<Routeprotected><Home/></Routeprotected>}/>             
                 <Route path="*" element={<NotFound/>}/>
-                <Route path="/Register" element ={<Register/>}/>
+                <Route path="/Registro" element ={<Register/>}/>
             </Routes>
         </BrowserRouter>
     )

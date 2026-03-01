@@ -38,7 +38,7 @@ const Login = ()=>{
         }
     }
 const handleClick =() =>{
-    navigate ("/Register")
+    navigate ("/Registro")
 }
     return (
             <section className="login">
