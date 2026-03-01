@@ -43,7 +43,7 @@ const handleChangePassword2 = (e) =>{
 
 const SendForm = (e)=>{
     e.preventDefault()
-    console.log({firstName, lastName, city, email, password, password2})
+    
 
 
     if (password === password2) {
@@ -51,43 +51,53 @@ const SendForm = (e)=>{
     }
     else {
         setError (true)
+        return  
     }
         console.log(error, "valor del error")
+
+
+    console.log({firstName, lastName, city, email, password, password2})
+    setFirstName("")
+    setLastName("")
+    setCity("")
+    setEmail("")
+    setPassword("")
+    setPassword2("")
     }
 
 
     return (
         <section className="register">
             <h1>Bienvenido al registro de usuarios</h1>
-            <form className="form-register">
+            <form className="form-register" onSubmit={SendForm}>
                 <div>
                     <p>Nombre: </p>
-                    <input type="text" placeholder="Ingrese su nombre" onChange={handleChangeFirstname}/>
+                    <input type="text" placeholder="Ingrese su nombre" onChange={handleChangeFirstname} value={firstName} required/>
                 </div>
                <div>
                 <p>Apellido: </p>
-                <input type="text" placeholder ="Ingrese su apellido" onChange={handleChangeLastName} />
+                <input type="text" placeholder ="Ingrese su apellido" onChange={handleChangeLastName} value={lastName} required/>
                </div>
                <div>
                 <p>Ciudad: </p>
-                <input type="text" placeholder="Ingrese su Ciudad" onChange={handleChangeCity} />
+                <input type="text" placeholder="Ingrese su Ciudad" onChange={handleChangeCity} value={city} required/>
                </div>
                <div>
                 <p>Email: </p>
-                <input type="email" placeholder="Ingrese su e-mail"  onChange={handleChangeEmail}/>
+                <input type="email" placeholder="Ingrese su e-mail"  onChange={handleChangeEmail} value={email} required/>
                </div>
                <div>
                 <p>Contraseña: </p>
-                <input type="password" placeholder="Ingrese su password" onChange={handleChangePassword} />
+                <input type="password" placeholder="Ingrese su password" onChange={handleChangePassword} value={password} required />
 
                </div>
                <div>
                 <p>Reingrese su contraseña: </p>
-                 <input type="password" placeholder="Reingrese su password" onChange={handleChangePassword2}/>
+                 <input type="password" placeholder="Reingrese su password" onChange={handleChangePassword2} value={password2}/>
                {error && <p className="error-password">Las contraseñas no son iguales</p>}
                </div>
                 
-                <button onClick={SendForm}>Enviar</button>
+                <button type="submit">Enviar</button>
 
             </form>
 

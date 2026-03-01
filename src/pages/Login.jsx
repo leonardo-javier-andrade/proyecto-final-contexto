@@ -1,7 +1,6 @@
-import { use, useState } from "react"
- import { useContext } from "react"
-    import { ChatContext } from "../context/ChatContext.jsx"
- import { useNavigate } from "react-router-dom"
+import { useState, useContext } from "react"
+import { useNavigate } from "react-router-dom"
+import { ChatContext } from "../context/ChatContext.jsx"
 
 const Login = ()=>{
     const [email,setEmail] = useState("") 
@@ -45,9 +44,7 @@ const handleClick =() =>{
             <section className="login">
                 <h1>Bienvenido, inicia sesión</h1>
                 <form onSubmit={handleSubmit}>
-                    <input type="email" placeholder="Ingrese su email"
-                    onChange={handleChangeEmail}
-                    />
+                    <input type="email" placeholder="Ingrese su email" onChange={handleChangeEmail}/>
                     <input type="password" placeholder="Ingrese su contraseña" onChange={handleChangePassword}/>
                     <button>Iniciar sesión</button>
                    {error && <p className="Error-login">Error al iniciar sesion</p>}

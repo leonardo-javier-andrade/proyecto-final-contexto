@@ -1,9 +1,11 @@
-import { StrictMode, useState } from 'react'
+import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 
 
-// Agregado de estilos css
+// Estilos de la App
 import "./styles/main.css"
+
+//Importaciones de componentes y rutas
 import { ChatProvider } from './context/ChatContext.jsx'
 
 import {RouterApp} from './router/RouterApp.jsx'

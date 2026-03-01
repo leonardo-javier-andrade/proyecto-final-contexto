@@ -181,6 +181,13 @@ section header {
     border-bottom: 1px solid    rgb(29, 23, 23);
     padding: 10px;
     border-radius: 8px 8px 8px 8px;
+    display: flex;
+}
+section header img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin-right: 10px;
 }
 
 .chat-container{
@@ -198,7 +205,10 @@ section header {
     border-radius: 5px;
     background-color: rgba(250, 235, 215, 0.452);
 }
-
+.message p {
+    white-space: pre-wrap; /* Mantiene los saltos de línea (\n) y envuelve el texto */
+    word-wrap: break-word; /* Opcional: evita que palabras muy largas rompan el diseño */
+}
 .message:hover{
     font-weight: bold;
     cursor: pointer;
@@ -226,12 +236,19 @@ section header {
     background-color: rgb(29, 96, 134);    gap:10px;
     border-radius: 8px 8px 0px 0px;
 }
+.chat-input textarea {
+    resize: none; /* Evita que el usuario estire el cuadro con el mouse */
+    min-height: 20px;
+    line-height: 1.5;
+}
 
 .input{
+    resize:none;
     flex:1;
     padding: 8px;
     border-radius: 8px;
     border: 1px solid  rgb(15, 41, 4);
+    height: 80px;
 }
 
 .input:focus{
@@ -239,13 +256,14 @@ section header {
 }
 
 .chat-input button{
+    height: 40px;
     background-color: rgb(20, 46, 63);
     color: white;
     padding: 8px 15px;
     border-radius: 6px 6px 6px 0px;
     border: 1px solid  rgb(83, 97, 136);
     transition: all 0.3s ease;
-}
+    align-self: center;}
 
 .chat-input button:hover{
     background-color: rgb(47, 58, 88);
@@ -261,7 +279,10 @@ section header {
     align-items: center;
     flex-direction: column;
 }
-
+.cont-not-found img{
+    width: 600px;
+    height: 300px;
+}
 .cont-not-found a{
     display: block;
     background-color: rgb(18, 5, 54);
