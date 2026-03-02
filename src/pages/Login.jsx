@@ -6,6 +6,7 @@ const Login = ()=>{
     const [email,setEmail] = useState("") 
     const [password,setPassword] = useState("")
     const [error, setError] = useState(null)
+    const [mensajeErrorLogin, setMensajeErrorLogin] = useState("")
 
     const {login, handleUser} = useContext(ChatContext)
 
@@ -27,13 +28,17 @@ const Login = ()=>{
         const response = login({email, password})
         console.log(response)
 
-        if (!response){
+
+
+        if (!response.value){
             setError(true)
+            setMensajeErrorLogin(response.message)
             return
         }
 
-        if (response) {
+        if (response.value) {
             handleUser({email, password})
+            console.log(response.message, "mensaje de bienvenida")
             navigate("/")
         }
     }
@@ -47,7 +52,7 @@ const handleClick =() =>{
                     <input type="email" placeholder="Ingrese su email" onChange={handleChangeEmail}/>
                     <input type="password" placeholder="Ingrese su contraseña" onChange={handleChangePassword}/>
                     <button>Iniciar sesión</button>
-                   {error && <p className="Error-login">Error al iniciar sesion</p>}
+                   {error && <p className="Error-login">{mensajeErrorLogin}</p>}
                 </form>
                 <p>No tienes usuario??</p>
                 <button onClick={handleClick}> Ir a Registrarse</button>

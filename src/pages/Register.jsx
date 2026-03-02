@@ -5,7 +5,7 @@ import { ChatContext } from "../context/ChatContext.jsx"
 
 const Register = () => {
 
-    const { handleRegisterNexUser, handleUser} =useContext(ChatContext)
+    const { handleRegisterNexUser, handleUser, users} =useContext(ChatContext)
 
     const navigate = useNavigate()
     const handleback = () => {
@@ -59,7 +59,7 @@ const Register = () => {
         
 
 
-        handleRegisterNexUser({ firstName, lastName, address:{city}, email, password, password2 })
+        handleRegisterNexUser({id: users.length + 1, firstName, lastName, address:{city}, email, password, password2, messages:[]})
         handleUser({email, password})
         navigate("/")
 

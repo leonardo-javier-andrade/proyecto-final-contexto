@@ -30,10 +30,14 @@ const ChatProvider = ({children}) => {
         const userfound = users.find(user=> user.email === userData.email)
 
         if (!userfound){
-            return false
-        }
+            return {value: false, message:"Email no encontrado"}
+                }
+            
+        if (userfound.password !== userData.password){
+            return {value: false, message:"Contraseña incorrecta"}}
+
         if (userfound.password === userData.password){
-            return true
+            return {value: true, message:"Bienvenido" }
         }
 
     }
