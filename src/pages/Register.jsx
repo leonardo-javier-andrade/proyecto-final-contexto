@@ -17,6 +17,7 @@ const Register = () => {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [password2, setPassword2] = useState("")
+    const [image, setImage] = useState("")
     const [error, setError] = useState(null)
 
 
@@ -44,6 +45,10 @@ const Register = () => {
         setPassword2(e.target.value)
     }
 
+    const handleChangeImage = (e) => {
+        setImage(e.target.value)
+    }
+
     const SendForm = (e) => {
         e.preventDefault()
 
@@ -59,7 +64,7 @@ const Register = () => {
         
 
 
-        handleRegisterNexUser({id: users.length + 1, firstName, lastName, address:{city}, email, password, password2, messages:[]})
+        handleRegisterNexUser({id: users.length + 1, firstName, lastName, address:{city}, email,image, password, password2, messages:[]})
         handleUser({email, password})
         navigate("/")
 
@@ -106,7 +111,11 @@ const Register = () => {
                     <input type="password" placeholder="Reingrese su password" onChange={handleChangePassword2} value={password2} />
                     {error && <p className="error-form">Las contraseñas no son iguales</p>}
                 </div>
-
+                <div>
+                    <p>Direccion Url de imagen ( Opcional) </p>
+                    <input type="text" placeholder="Url de imagen" onChange={handleChangeImage} value={image} />
+                    
+                </div>
                 <button type="submit">Enviar</button>
 
             </form>
