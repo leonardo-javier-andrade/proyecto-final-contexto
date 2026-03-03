@@ -123,8 +123,12 @@ const Register = () => {
             <button className="volverlogin" onClick={handleback}>Volver</button>
         </section>
 
+        
+
     )
 }
+
+
 
 
 export { Register }

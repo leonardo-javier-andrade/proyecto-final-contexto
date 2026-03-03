@@ -56,6 +56,11 @@ const handleClick =() =>{
                 </form>
                 <p>No tienes usuario??</p>
                 <button onClick={handleClick}> Ir a Registrarse</button>
+                <footer>
+                 <button onClick={() => navigate("/acerca")}>
+  Saber más sobre el proyecto
+</button>   
+                </footer>
 
             </section>
     )

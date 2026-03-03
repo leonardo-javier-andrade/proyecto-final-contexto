@@ -61,9 +61,12 @@ const ChatProvider = ({children}) => {
     const selectedUser = users.find(user => user.id === selectedUserId)
 
     const  handleRegisterNexUser = (newUser)=>{
-        setUsers((prevValue) => [...prevValue, newUser])
-        console.log(newUser, "datos del nuevo usuario desde el context añadidos a la lista de usuario")
-        localStorage.setItem("newApi",JSON.stringify(users))
+        // setUsers((prevValue) => [...prevValue, newUser])
+        // console.log(newUser, "datos del nuevo usuario desde el context añadidos a la lista de usuario")
+
+
+        const updateUsers = [...users, newUser]
+        localStorage.setItem("newApi",JSON.stringify(updateUsers))
 
 
     }
