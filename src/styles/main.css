@@ -1,91 +1,115 @@
-*{
+* {
     margin: 0px;
-    padding: 0px;   
+    padding: 0px;
     box-sizing: border-box;
 }
 
 
 
-.app{
+.app {
     height: 100vh;
     display: flex;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 
 }
 
-    .header-aside{
-        display: flex;
-        flex-direction: column;
-            align-items: center;
-        padding: 4px;
-        margin-top: auto;
-    }
-    .header-aside h1{
-        color: rgb(27, 110, 110);
-        backdrop-filter: blur(12px);
-            background-color: rgba(250, 235, 215, 0.452);
-        padding: 10px;
-        border-radius: 10px;
-        flex: 1;}
+.header-aside {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4px;
+    margin-top: auto;
+}
+
+.header-aside h1 {
+    color: rgb(27, 110, 110);
+    backdrop-filter: blur(12px);
+    background-color: rgba(250, 235, 215, 0.452);
+    padding: 10px;
+    border-radius: 10px;
+    flex: 1;
+}
 
 /* ----------------------------------------ANIMACION DE TEMBLOR H1 ASIDE------------------- */
 
 @keyframes shake-subtle {
-    0% { transform: translate(0); }
-    20% { transform: translate(-1.5px, 1px); }
-    40% { transform: translate(-1.5px, -1px); }
-    60% { transform: translate(1.5px, 1px); }
-    80% { transform: translate(1.5px, -1px); }
-    100% { transform: translate(0); }
+    0% {
+        transform: translate(0);
+    }
+
+    20% {
+        transform: translate(-1.5px, 1px);
+    }
+
+    40% {
+        transform: translate(-1.5px, -1px);
+    }
+
+    60% {
+        transform: translate(1.5px, 1px);
+    }
+
+    80% {
+        transform: translate(1.5px, -1px);
+    }
+
+    100% {
+        transform: translate(0);
+    }
 }
 
-/* 2. Lo aplicamos al h1 cuando el mouse está encima */
 .header-aside h1:hover {
     animation: shake-subtle 0.3s linear;
-    /* Opcional: un leve cambio de color para enfatizar el efecto */
-    color: rgb(35, 140, 140); 
+    color: rgb(35, 140, 140);
     cursor: default;
 }
 
-    
 
 
-/* ------------------------------EFECTOS  DEL BOTON  CHAT---------------------------------------------------- */
+
+/* ------------------------------EFECTOS  DEL BOTON  LOGOUT---------------------------------------------------- */
 
 .header-aside button.btn-logout {
     display: flex;
     align-items: center;
-    gap: 0px; /* Sin espacio al principio */
+    gap: 0px;/* Sin espacio al principio */
+    
     width: 35px; /* Ancho suficiente para el icono */
+   
     height: 35px;
     padding: 8px;
-    overflow: hidden; /* ESENCIAL: oculta lo que sobresale */
-    white-space: nowrap; /* Evita que el texto salte de línea */
-    transition: width 0.4s ease, gap 0.4s ease; /* Animación suave */
+    overflow: hidden;/* oculta lo que sobresale */
+    
+    white-space: nowrap;/* Evita que el texto salte de línea */
+    
+    transition: width 0.4s ease, gap 0.4s ease;/* Animación suave */
+    
     border-radius: 20px; /* Lo hace redondito */
+   
     align-self: flex-end;
 }
 
-/* Al pasar el mouse... */
 .header-aside button.btn-logout:hover {
-    width: 130px; /* Se expande para mostrar el texto */
+    width: 130px;    /* Se expande para mostrar el texto */
+
     gap: 10px;    /* Aparece el espacio entre icono y texto */
+
     background-color: rgb(47, 58, 88);
 }
 
-/* Estilo del texto */
 .btn-logout .text {
     opacity: 0;
     transition: opacity 0.3s ease;
 }
 
 .btn-logout:hover .text {
-    opacity: 1; /* El texto aparece suavemente */
+    opacity: 1;
+    
 }
 
 
 
-aside{
+aside {
     background-color: rgb(152, 209, 226);
     width: 250px;
     display: flex;
@@ -93,80 +117,86 @@ aside{
     overflow-y: scroll;
     overflow-x: hidden;
 }
-aside h1{
+
+aside h1 {
     text-align: center;
     margin-bottom: 10px;
 }
-.seach{
+
+.seach {
     display: block;
     width: 90%;
     margin: 10px;
     padding: 10px;
     border-radius: 10px;
-    border: 2px solid  rgb(15, 41, 4);
+    border: 2px solid rgb(15, 41, 4);
 }
 
 
 li {
     margin-bottom: 10px;
     padding: 5px;
-    background-color: rgb(57, 101, 131) ;
-    margin: 5px 10px;   
+    background-color: rgb(57, 101, 131);
+    margin: 5px 10px;
     border-radius: 15px;
     list-style: none;
     display: flex
 }
-ul :hover{
-    background-color: rgb(20, 46, 63) ;
+
+ul :hover {
+    background-color: rgb(20, 46, 63);
     cursor: pointer;
     color: white;
 }
 
-li img{
+li img {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    margin-right:10px;
+    margin-right: 10px;
 }
+
 li span {
     display: block;
     color: rgb(48, 47, 47)
 }
 
 /* ----------------------SECCION DEL CHAT------------------------------------- */
-section.chat{
-    
+section.chat {
+
     display: flex;
     flex-direction: column;
     background-image: url('../assets/messages_light_colour_background.jpg');
     background-size: cover;
-    flex:1;}
+    flex: 1;
+}
 
-.chat-cont-empty{
+.chat-cont-empty {
     display: flex;
     justify-content: center;
     align-items: center;
     flex: 1;
 }
 
-.chat-empty{
+.chat-empty {
     text-align: center;
     margin-top: 20px;
     padding: 40px;
-     border-radius: 10px 10px 10px px;
-     font-size: 20px;
+    border-radius: 10px 10px 10px px;
+    font-size: 20px;
     color: rgb(48, 47, 47);
-    backdrop-filter: blur(18px); 
-  
+    backdrop-filter: blur(18px);
+
 }
 
 section header {
     background-color: rgb(29, 96, 134);
-    border-bottom: 1px solid    rgb(29, 23, 23);
+    border-bottom: 1px solid rgb(29, 23, 23);
     padding: 10px;
     border-radius: 8px 8px 8px 8px;
     display: flex;
 }
+
 section header img {
     width: 70px;
     height: 70px;
@@ -174,7 +204,7 @@ section header img {
     margin-right: 10px;
 }
 
-.chat-container{
+.chat-container {
     flex: 1;
     overflow-y: auto;
     display: flex;
@@ -189,23 +219,28 @@ section header img {
     border-radius: 5px;
     background-color: rgba(250, 235, 215, 0.452);
 }
+
 .message p {
-    white-space: pre-wrap; /* Mantiene los saltos de línea (\n) y envuelve el texto */
-    word-wrap: break-word; /* Opcional: evita que palabras muy largas rompan el diseño */
+    white-space: pre-wrap;
+    /* Mantiene los saltos de línea (\n) y envuelve el texto */
+    word-wrap: break-word;
+    /* Opcional: evita que palabras muy largas rompan el diseño */
 }
-.message:hover{
+
+.message:hover {
     font-weight: bold;
     cursor: pointer;
-    
+
 }
+
 .received {
     align-self: start;
 }
 
-.me { 
+.me {
     background-color: rgba(128, 187, 128, 0.445);
     align-self: flex-end;
-    }
+}
 
 .timeStamp {
     color: gray;
@@ -213,49 +248,54 @@ section header img {
     text-align: end;
     margin-top: 3px;
 }
+
 /* -------------Estilos del input del chat---------- */
-.chat-input{
+.chat-input {
     padding: 10px;
     display: flex;
-    background-color: rgb(29, 96, 134);    gap:10px;
+    background-color: rgb(29, 96, 134);
+    gap: 10px;
     border-radius: 8px 8px 0px 0px;
 }
+
 .chat-input textarea {
-    resize: none; /* Evita que el usuario estire el cuadro con el mouse */
+    resize: none;
+    /* Evita que el usuario estire el cuadro con el mouse */
     min-height: 20px;
     line-height: 1.5;
 }
 
-.input{
-    resize:none;
-    flex:1;
+.input {
+    resize: none;
+    flex: 1;
     padding: 8px;
     border-radius: 8px;
-    border: 1px solid  rgb(15, 41, 4);
+    border: 1px solid rgb(15, 41, 4);
     height: 80px;
 }
 
-.input:focus{
-    outline: 1px solid  rgb(15, 41, 4);
+.input:focus {
+    outline: 1px solid rgb(15, 41, 4);
 }
 
-.chat-input button{
+.chat-input button {
     height: 40px;
     background-color: rgb(20, 46, 63);
     color: white;
     padding: 8px 15px;
     border-radius: 6px 6px 6px 0px;
-    border: 1px solid  rgb(83, 97, 136);
+    border: 1px solid rgb(83, 97, 136);
     transition: all 0.3s ease;
-    align-self: center;}
+    align-self: center;
+}
 
-.chat-input button:hover{
+.chat-input button:hover {
     background-color: rgb(47, 58, 88);
     cursor: pointer;
 }
 
 
-.cont-not-found{
+.cont-not-found {
     background-color: rgb(175, 166, 221);
     height: 100vh;
     display: flex;
@@ -263,11 +303,13 @@ section header img {
     align-items: center;
     flex-direction: column;
 }
-.cont-not-found img{
+
+.cont-not-found img {
     width: 600px;
     height: 300px;
 }
-.cont-not-found a{
+
+.cont-not-found a {
     display: block;
     background-color: rgb(18, 5, 54);
     padding: 8px 16px;
@@ -277,10 +319,11 @@ section header img {
     margin-top: 10px;
     transition: 0.9s;
 }
-.cont-not-found a:hover{
+
+.cont-not-found a:hover {
     cursor: pointer;
     background-color: beige;
-    color:rgb(18, 5, 54);
+    color: rgb(18, 5, 54);
 }
 
 /* ---------------------- LOGIN ---------------------- */
@@ -301,9 +344,9 @@ section.login {
     margin-bottom: 20px;
     color: rgb(27, 110, 110);
     backdrop-filter: blur(12px);
-        background-color: rgba(250, 235, 215, 0.452);
-     padding: 10px;
-     border-radius: 10px;
+    background-color: rgba(250, 235, 215, 0.452);
+    padding: 10px;
+    border-radius: 10px;
 }
 
 .login form {
@@ -353,7 +396,7 @@ section.login {
 
 /* ---------------------- REGISTER ---------------------- */
 
-/* Reutilizamos la base del login para el contenedor de registro */
+
 section.register {
     flex: 1;
     display: flex;
@@ -361,7 +404,7 @@ section.register {
     align-items: center;
     background-image: url('../assets/messages_light_colour_background.jpg');
     background-size: cover;
-    min-height: 100vh; /* Cambiado a min-height por si el form es largo */
+    min-height: 100vh;
     flex-direction: column;
     padding: 20px;
 }
@@ -386,11 +429,10 @@ section.register {
     flex-direction: column;
     gap: 15px;
     width: 100%;
-    max-width: 450px; /* Un poco más ancho que el login por los campos */
+    max-width: 450px;
     box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
 }
 
-/* Estilo para los contenedores de cada input */
 .form-register div {
     display: flex;
     flex-direction: column;
@@ -434,7 +476,8 @@ section.register {
 }
 
 .error-form {
-    color: rgb(216, 22, 22) !important; /* Forzamos el color de error */
+    color: rgb(216, 22, 22) !important;    /* Forzamos el color de error */
+
     font-size: 12px !important;
     margin-top: 2px;
 }
@@ -456,18 +499,19 @@ section.register {
     cursor: pointer;
     transform: translateY(-2px);
 }
+
 /* --------------------------------Responsive------------------------ */
 
 
 @media (max-width: 880px) {
-    
+
     aside {
-     
+
         display: none;
-       
+
     }
-   
-}   
+
+}
 
 
 
@@ -490,35 +534,37 @@ section:has(.Introduccion) {
     font-family: 'Gill Sans', sans-serif;
 }
 
-/* Título Principal */
-section:has(.Introduccion) > h1 {
+section:has(.Introduccion)>h1 {
     color: rgb(27, 110, 110);
     background-color: rgba(250, 235, 215, 0.7);
     backdrop-filter: blur(10px);
     padding: 15px 40px;
     border-radius: 15px;
     text-align: center;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
 }
 
 /* Estilo base para todos los bloques (Artículos) */
-article.Introduccion, 
-article.partesApp, 
-article.deciciones, 
-article.Observaciones-Dificultades article, /* Por si anidas */
-.observaciones, 
+article.Introduccion,
+article.partesApp,
+article.deciciones,
+article.Observaciones-Dificultades article,
+
+.observaciones,
 .dificultades {
-    background-color: rgba(250, 235, 215, 0.65);
+    background-color: rgba(6, 167, 113, 0.425);
     backdrop-filter: blur(15px);
     padding: 25px;
     border-radius: 20px;
     width: 100%;
     max-width: 1200px;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.3);
     margin-bottom: 20px;
 }
+
+
 
 .tecnology {
     display: flex;
@@ -537,7 +583,6 @@ article h2 {
     font-size: 1.4rem;
 }
 
-/* --- SECCIÓN INTRODUCCIÓN (Flexbox) --- */
 .Introduccion {
     display: flex;
     justify-content: space-between;
@@ -545,11 +590,11 @@ article h2 {
 }
 
 .Introduccion aside {
-    background-color: rgba(27, 110, 110, 0.1); /* Color suave para el aside */
+    background-color: rgba(27, 110, 110, 0.1);
     padding: 15px;
     border-radius: 12px;
     min-width: 200px;
-    overflow: hidden; /* Evita scrolls innecesarios aquí */
+    overflow: hidden;
 }
 
 .Introduccion ul li {
@@ -558,27 +603,29 @@ article h2 {
     padding: 8px 15px;
     border-radius: 20px;
     font-size: 0.9rem;
-    display: inline-block; /* Para que no ocupen todo el ancho si no quieres */
+    display: inline-block;
     margin: 4px;
 }
 
-/* --- SECCIÓN PARTES DE LA APP (Imágenes) --- */
-.descriptionApp, .descriptionLogin, .descriptionRegister {
+/* --- SECCIÓN PARTES DE LA APP  --- */
+.descriptionApp,
+.descriptionLogin,
+.descriptionRegister {
     display: flex;
     align-items: center;
     gap: 20px;
     margin-top: 20px;
     padding-bottom: 15px;
-    border-bottom: 1px solid rgba(0,0,0,0.05);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-.descriptionApp img, 
-.descriptionLogin img, 
+.descriptionApp img,
+.descriptionLogin img,
 .descriptionRegister img {
     width: 450px;
     height: auto;
     border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     border: 3px solid white;
     transition: transform 0.3s ease;
 }
@@ -596,25 +643,25 @@ article h2 {
     max-width: 900px;
 }
 
-/* Ajustes de texto */
 p {
     line-height: 1.6;
     color: #333;
 }
 
-/* Responsive para celulares */
+/* Responsive  */
 @media (max-width: 768px) {
-    .Introduccion, 
-    .descriptionApp, 
-    .descriptionLogin, 
+
+    .Introduccion,
+    .descriptionApp,
+    .descriptionLogin,
     .descriptionRegister,
     .Observaciones-Dificultades {
         flex-direction: column;
         grid-template-columns: 1fr;
     }
 
-    .descriptionApp img, 
-    .descriptionLogin img, 
+    .descriptionApp img,
+    .descriptionLogin img,
     .descriptionRegister img {
         width: 100%;
     }

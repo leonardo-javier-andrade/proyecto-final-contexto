@@ -29,6 +29,8 @@ const Aside = () => {
     handleSelectedUserId(id)
   }
 
+  const handleTitle = () => {
+      navigate("/acerca")}
 
   return (
     <aside>
@@ -38,7 +40,7 @@ const Aside = () => {
           <span className="icon">🏃‍♂️</span>
           <span className="text">Cerrar Sesión</span>
         </button>
-        <h1>Chat de UTN</h1>
+        <h1 onClick={handleTitle}>Chat de UTN</h1>
       </div>
 
       <input className="seach" type="search" placeholder="Buscar usuario" onChange={handleChange} />

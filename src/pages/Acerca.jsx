@@ -29,9 +29,9 @@ const Acerca = () => {
                 </div>
                 <aside>
 
-                    <h2>Tecnologias Utilizadas</h2>
+                    <h2 className="title-tecnology">Tecnologias Utilizadas</h2>
                     <img src={tecnologies} alt="logos de tecnologias" className="tecnology" />
-                    <ul>
+                    <ul className="tecnology"> 
                         <li><a href="https://es.wikipedia.org/wiki/HTML" target="_blank">Html</a></li>
                         <li><a href="https://es.wikipedia.org/wiki/JavaScript" target="_blank">Js</a></li>
                         <li><a href="https://es.wikipedia.org/wiki/CSS" target="_blank">Css</a></li>
