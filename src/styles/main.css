@@ -500,18 +500,6 @@ section.register {
     transform: translateY(-2px);
 }
 
-/* --------------------------------Responsive------------------------ */
-
-
-@media (max-width: 880px) {
-
-    aside {
-
-        display: none;
-
-    }
-
-}
 
 
 
@@ -648,9 +636,55 @@ p {
     color: #333;
 }
 
-/* Responsive  */
-@media (max-width: 768px) {
+/* Boton que permance oculto en PC de el Chat */
+.btn-back-mobile {
+    display: none; 
+    background-color: red;
+}
 
+/* --------------------------------Responsive------------red------------ */
+
+
+
+
+
+
+@media (max-width: 768px) {
+    /* En dispositivo movil el Aside siempre visible para seleccionar contacto */
+     aside {
+
+        width: 100%;
+        display: flex;
+
+    }
+
+    .chat-cont-empty{
+        display: none !important;
+    }
+
+    /* Si se selcciona un contacto se le agrega una clase y se oculta el Aside y se hace visible el chat */
+
+    .app.user-selected aside {
+        display: none;
+    }
+    .app.user-selected section.chat {
+        display: flex;
+        width: 100%;}
+
+
+/* Boton que aparece solo cuando esta en pantalla chica para quitar la seleccion de contacto para que vuelva a ser visible el Aside */
+    .btn-back-mobile {
+        display: block;
+        background: transparent;
+        border: none;   
+        color: white;
+        font-size: 24px;
+    
+        cursor: pointer;
+        margin-left: auto;
+    }
+
+/* Estilos para las columnas del Acerca */
     .Introduccion,
     .descriptionApp,
     .descriptionLogin,

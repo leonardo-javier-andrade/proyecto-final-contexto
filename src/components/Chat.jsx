@@ -7,7 +7,7 @@ const Chat = () => {
 
   const chatContainerRef = useRef(null)
 
-  const { selectedUser, handleMessages } = useContext(ChatContext)
+  const { selectedUser, handleMessages, handleSelectedUserId } = useContext(ChatContext)
 
 
   const hadleChange = (event) => {
@@ -51,6 +51,9 @@ const Chat = () => {
     }
   }, [selectedUser?.messages])
 
+const ClickBack = () => {
+handleSelectedUserId(null)}
+
 
   if (!selectedUser) {
     return (<section className="chat-cont-empty">
@@ -58,6 +61,7 @@ const Chat = () => {
     </section>
     )
   }
+
 
   return (
     <section className="chat">
@@ -70,7 +74,11 @@ const Chat = () => {
             <p>Ultima conexión hace 1 minuto</p>
         </div>
 
-        
+        <button className="btn-back-mobile" onClick={()=>ClickBack(null)}>
+          ⬅️
+        </button>
+
+
       </header>
       <div className="chat-container" ref={chatContainerRef}>
         {
