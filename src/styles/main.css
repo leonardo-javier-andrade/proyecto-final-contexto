@@ -48,25 +48,9 @@
 }
 
     
-/* --------------------------Efectos antiguuo del BOTN CERRAR SESION    ------------------------------ */
-    /* .header-aside button{
-        background-color: rgb(20, 46, 63);
-        color: white;
-        padding: 4px 4px;
-        border-radius: 6px 6px 6px 0px;
-        border: 1px solid  rgb(83, 97, 136);
-        transition: all 0.3s ease;
-        font-size: 12px;
-        align-self:flex-end;
-        margin-right: 8px;
-    }
-.header-aside button:hover{
-    background-color: rgb(47, 58, 88);
-    cursor: pointer;
-} */
 
 
-/* ------------------------------EFECTOS NUEVOS DEL BOTON POR CHAT---------------------------------------------------- */
+/* ------------------------------EFECTOS  DEL BOTON  CHAT---------------------------------------------------- */
 
 .header-aside button.btn-logout {
     display: flex;
@@ -491,9 +475,6 @@ section.register {
 /* --------------------------------------estilos de ACERCA DE---------------------------- */
 
 
-/* =============================================
-   ESTILOS PARA LA SECCIÓN ACERCA (SIN TOCAR JSX)
-   ============================================= */
 
 /* Contenedor principal de la sección */
 section:has(.Introduccion) {
@@ -533,11 +514,21 @@ article.Observaciones-Dificultades article, /* Por si anidas */
     padding: 25px;
     border-radius: 20px;
     width: 100%;
-    max-width: 900px;
+    max-width: 1200px;
     box-shadow: 0 8px 32px rgba(0,0,0,0.1);
     border: 1px solid rgba(255, 255, 255, 0.3);
     margin-bottom: 20px;
 }
+
+.tecnology {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 15px;
+    align-items: center;
+}
+
+
 
 /* Títulos internos */
 article h2 {
@@ -584,7 +575,7 @@ article h2 {
 .descriptionApp img, 
 .descriptionLogin img, 
 .descriptionRegister img {
-    width: 250px;
+    width: 450px;
     height: auto;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
