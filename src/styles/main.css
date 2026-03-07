@@ -95,6 +95,7 @@
     gap: 10px;    /* Aparece el espacio entre icono y texto */
 
     background-color: rgb(47, 58, 88);
+    color: white;
 }
 
 .btn-logout .text {
@@ -178,6 +179,7 @@ section.chat {
     justify-content: center;
     align-items: center;
     flex: 1;
+    background-color: rgb(190, 217, 239)
 }
 
 .chat-empty {
@@ -186,7 +188,7 @@ section.chat {
     padding: 40px;
     border-radius: 10px 10px 10px px;
     font-size: 20px;
-    color: rgb(48, 47, 47);
+    color: rgb(39, 39, 39);
     backdrop-filter: blur(18px);
 
 }
